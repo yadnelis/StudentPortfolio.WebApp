@@ -3,6 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent: #c1e25e;
+}
+
+* {
+  font-size: 14px;
 }
 
 @theme inline {
@@ -26,7 +31,9 @@ body {
 }
 
 @theme {
-  --color-base-100: oklch(98% 0.002 247.839);
+  --color-accent: #c1e25e;
+
+  /* --color-base-100: oklch(98% 0.002 247.839);
   --color-base-200: oklch(96% 0.003 264.542);
   --color-base-300: oklch(92% 0.006 264.531);
   --color-base-content: oklch(21% 0.034 264.665);
@@ -53,5 +60,5 @@ body {
   --size-field: 0.25rem;
   --border: 1.5px;
   --depth: 1;
-  --noise: 0;
+  --noise: 0; */
 }
