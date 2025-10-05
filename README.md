@@ -4,25 +4,41 @@ Student portfolio is an application meant for acknowledging student achievements
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+### Outline
+- Depedencies
+- Setup
+- Running the app locally
+- Deploying the app
+- Libraries
+- Learn More
 
-First, run the development server:
+## Dependencies
+- [NodeJs](https://nodejs.org/en) >=20.9.0 - desktop runtime environment for javascript.
+- [pnpm](https://pnpm.io/installation) >=0.18.0 - 'Performant npm'. An improved version of npm.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Setup 
+- Install NodeJs from [here](https://nodejs.org/en/download)
+- Run `npm install -g pnpm` on your terminal to install pnpm
+- Open a terminal inside the proyect directory [basedir]/StudentPortfolio.WebApp. And run `pnpm install`. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running the app locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Run the development server: `pnpm dev`
+2. Open [localhost:3000](http://localhost:3000) in your browser to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploying the app
+
+// TODO
+
+
+## Libraries
+
+- [Next.js](https://nextjs.org) - A react framework that allows for server rendering and better navigation. (MIT Licensed)
+- [Next/font](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) - Automatically optimizes and loads [Geist](https://vercel.com/font), a new font family for Vercel.
+- [Lucide](https://lucide.dev) - SCG icons library with react integration. (ISC Licensed, free and open-source)
+- [Mantine](https://mantine.dev) - React component library. (MIT Licensed)
+- [Tailwind](https://tailwindcss.com/) - Free and open source utility-first CSS framework. (MIT Licensed)
+- [Typescript](https://www.typescriptlang.org/) - Node.js package that adds static typing to JavaScript. (Apache Licensed, Royalty Free)
 
 ## Learn More
 
