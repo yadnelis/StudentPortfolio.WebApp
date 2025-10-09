@@ -8,7 +8,7 @@ import React, {
 } from "react";
 
 export interface IconButtonProps extends ComponentProps<"button"> {
-  size?: MantineSize | (string & {});
+  size?: MantineSize;
   children: ReactElement<ComponentProps<"svg">>;
 }
 
