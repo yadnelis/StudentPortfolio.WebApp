@@ -12,7 +12,7 @@ type buttonProps = { icon: ReactElement<Omit<LucideProps, "ref">> } & Omit<
   "children"
 >;
 
-interface TextInputProps extends MTextInputProps {
+export interface TextInputProps extends MTextInputProps {
   leftButton?: buttonProps;
   rightButton?: buttonProps;
   classNames?: Record<"input" | "wrapper" | string, string>;
