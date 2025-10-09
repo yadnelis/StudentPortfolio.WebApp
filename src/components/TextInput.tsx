@@ -1,19 +1,18 @@
 import {
-  TextInput as Input,
-  TextInputProps as InputProps,
+  TextInput as MTextInput,
+  TextInputProps as MTextInputProps,
 } from "@mantine/core";
-import { Search } from "lucide-react";
-import { IconButton, IconButtonProps } from "./IconButton";
-import { ComponentProps, FC, ReactElement, ReactNode } from "react";
-import { styles } from "@/utilities/styles";
-import "@mantine/core/styles/Input.css";
+import { LucideProps } from "lucide-react";
+import { FC, ReactElement } from "react";
 
-type buttonProps = { icon: ReactElement<ComponentProps<"svg">> } & Omit<
+import { IconButton, IconButtonProps } from "@/components/IconButton";
+
+type buttonProps = { icon: ReactElement<Omit<LucideProps, "ref">> } & Omit<
   IconButtonProps,
   "children"
 >;
 
-interface TextInputProps extends InputProps {
+interface TextInputProps extends MTextInputProps {
   leftButton?: buttonProps;
   rightButton?: buttonProps;
   classNames?: Record<"input" | "wrapper" | string, string>;
@@ -22,19 +21,23 @@ interface TextInputProps extends InputProps {
 export const TextInput: FC<TextInputProps> = ({
   leftButton,
   rightButton,
-  classNames,
   size,
-  className = "bg-slate-50",
+  className,
+  classNames,
   ...props
 }) => {
-  if (leftButton) {
-    props.leftSection = <IconButton className="">{leftButton.icon}</IconButton>;
+  if(leftButton) {
+    props.leftSection = <IconButton size={"sm"} {...leftButton}>{leftButton.icon}</IconButton>
   }
-  if (rightButton) {
-    props.rightSection = (
-      <IconButton className="">{rightButton.icon}</IconButton>
-    );
+  if(rightButton) {
+    props.rightSection = <IconButton size={"sm"} {...rightButton}>{rightButton.icon}</IconButton>
   }
 
-  return <Input className={className} {...props} />;
+  return (
+    <div className="relative">
+      <MTextInput {...props} classNames={{input: "bg-slate-50 " + (className??""), ...classNames}}/>
+    </div>
+  );
 };
+
+TextInput.displayName = "TextInput";
