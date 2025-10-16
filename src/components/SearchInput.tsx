@@ -13,7 +13,7 @@ export const SearchInput:FC<SearchInputProps> = ({onChangeDebounceValue, ...prop
   const [debounced] = useDebouncedValue(value, 300);
 
   useEffect(()=> {
-    onChangeDebounceValue(debounced);
+    onChangeDebounceValue?.(debounced);
   }, [debounced]);
 
 
