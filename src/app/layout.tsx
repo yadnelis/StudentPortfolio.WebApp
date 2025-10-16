@@ -4,7 +4,6 @@ import { Header } from "@/components/Header";
 import { MantineProvider } from "@mantine/core";
 
 import "@/app/globals.css";
-import "@mantine/core/styles.css";
 
 
 
@@ -29,13 +28,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full overflow-hidden text-sm">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-slate-100 antialiased h-full grid grid-rows-[min-content_minmax(0,1fr)]`}
       >
         <MantineProvider>
           <Header />
-          {children}
+          <main className="overflow-auto">
+
+            {children}
+          </main>
         </MantineProvider>
       </body>
     </html>
