@@ -6,11 +6,28 @@ import React, {
   FC,
   ReactElement,
 } from "react";
+import { tv } from "tailwind-variants";
 
 export interface IconButtonProps extends ComponentProps<"button"> {
   size?: MantineSize;
   children: ReactElement<ComponentProps<"svg">>;
 }
+
+const iconButtonVariants = tv({
+  slots: {
+    base: "appearance-none p-1 rounded-xs group/iconbutton inline-flex justify-center items-center",
+    icon: "text-stone-600 group-hover/iconbutton:text-gray-400 group-active/iconbutton::text-gray-950 transition transition-50",
+  },
+  variants: {
+    size: {
+      xs: { icon: "size-3" },
+      sm: { icon: "size-4" },
+      md: { icon: "size-5" },
+      lg: { icon: "size-6" },
+      xl: { icon: "size-8" },
+    },
+  },
+});
 
 export const IconButton: FC<IconButtonProps> = ({
   children,
@@ -18,14 +35,16 @@ export const IconButton: FC<IconButtonProps> = ({
   className,
   ...props
 }) => {
-  const twSize = size === "sm" ? "size-4" : size === "lg" ? "size-6" : "size-5";
+  const { base: buttonTailwind, icon: iconTailwind } = iconButtonVariants({
+    size,
+  });
   return (
-    <button className={`appearance-none p-1 rounded-xs group/iconbutton inline-flex justify-center items-center ${className}`} {...props}>
+    <button className={buttonTailwind({ className })} {...props}>
       {Children.map(children, (child) =>
         cloneElement(child, {
-          className: [twSize, React.Children.only(child).props.className,
-            "text-stone-600 group-hover/iconbutton:text-gray-400 group-active/iconbutton::text-gray-950 transition transition-50"
-           ].join(" "),
+          className: iconTailwind({
+            className: React.Children.only(child).props.className,
+          }),
         })
       )}
     </button>
