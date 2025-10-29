@@ -6,11 +6,7 @@
   --foreground: #171717;
   --accent: #c1e25e;
   font-size: 16px;
-  font-family: "Inter", sans-serif;
-}
-
-* {
-  font-size: 14px;
+  font-family: "Open-Sans", sans-serif;
 }
 
 @theme inline {
@@ -29,4 +25,6 @@
 
 @theme {
   --color-accent: #c1e25e;
+  --color-secondary: #38405e;
+  --color-primary: #3d4f26;
 }
