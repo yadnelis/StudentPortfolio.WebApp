@@ -5,7 +5,7 @@ import { useDebouncedState, useDebouncedValue } from "@mantine/hooks";
 import { FC, useEffect, useState } from "react";
 
 export interface SearchInputProps extends TextInputProps {
-  onChangeDebounceValue: (value: string) => void;
+  onChangeDebounceValue?: (value: string) => void;
 }
 
 export const SearchInput: FC<SearchInputProps> = ({
