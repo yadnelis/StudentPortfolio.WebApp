@@ -1,20 +1,43 @@
+"use client";
+import { Button } from "@/components/Button";
+import { Modal } from "@/components/Modal";
+import { SearchInput } from "@/components/SearchInput";
 import {
   AcknowledgementListItem,
   StudentProfileCard,
 } from "@/components/StudentProfileCard";
 import { TextInput } from "@/components/TextInput";
 import { ArrowBigDown, ArrowDown, icons } from "lucide-react";
+import { useState } from "react";
 
 const Page = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <section className="flex flex-col gap-12 justify-center items-center w-full p-12">
+      <Button
+        onClick={(_) => {
+          console.log("aaa");
+          setIsOpen(true);
+        }}
+      >
+        Open Modal
+      </Button>
+
       <div className="bg-white p-5 flex gap-5">
-        <TextInput value={"Test"} />
+        <TextInput value={"Test"} onChange={() => {}} />
         <TextInput placeholder={"Test"} />
+        <SearchInput />
       </div>
       <div className="bg-slate-500 p-5 flex gap-5">
-        <TextInput value={"Test"} />
+        <TextInput value={"Test"} onChange={() => {}} />
         <TextInput placeholder={"Test"} />
+        <SearchInput />
+      </div>
+      <div className="bg-slate-100 p-5 flex gap-5">
+        <Button>Button</Button>
+        <Button color="secondary">Button</Button>
+        <Button color="primary">Button</Button>
+        <Button color="accent">Button</Button>
       </div>
       <StudentProfileCard
         studentId="Y00604979"
@@ -59,6 +82,12 @@ const Page = () => {
           voluptate soluta natus.
         </AcknowledgementListItem>
       </StudentProfileCard>
+      <Modal
+        opened={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="urmom"
+        header={<div>womp womp</div>}
+      />
     </section>
   );
 };
