@@ -40,42 +40,42 @@ const Page = () => {
         <Button color="accent">Button</Button>
       </div>
       <StudentProfileCard
-        studentId="Y00604979"
+        institutionalId="Y00604979"
         fullName="Yadnelis Gonzalez"
         description="Lorem ipsum dolor sit amet."
       >
         <AcknowledgementListItem
-          Type={2}
-          Place="FBI"
-          StartDate={new Date(2025, 10, 22)}
-          EndDate={new Date(2025, 10, 22)}
+          type={2}
+          place="FBI"
+          startDate={new Date(2025, 10, 22)}
+          endDate={new Date(2025, 10, 22)}
         >
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus
           voluptate totam maiores dolore laudantium, voluptates omnis? Aliquam
           voluptate soluta natus.
         </AcknowledgementListItem>
         <AcknowledgementListItem
-          Type={2}
-          Place="FBI"
-          StartDate={new Date(2025, 10, 23)}
+          type={2}
+          place="FBI"
+          startDate={new Date(2025, 10, 23)}
         >
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus
           voluptate totam maiores dolore laudantium, voluptates omnis? Aliquam
           voluptate soluta natus.
         </AcknowledgementListItem>
         <AcknowledgementListItem
-          Type={2}
-          Place="FBI"
-          StartDate={new Date(2025, 10, 25)}
+          type={2}
+          place="FBI"
+          startDate={new Date(2025, 10, 25)}
         >
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus
           voluptate totam maiores dolore laudantium, voluptates omnis? Aliquam
           voluptate soluta natus.
         </AcknowledgementListItem>
         <AcknowledgementListItem
-          Type={2}
-          Place="FBI"
-          StartDate={new Date(2025, 10, 21)}
+          type={2}
+          place="FBI"
+          startDate={new Date(2025, 10, 21)}
         >
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus
           voluptate totam maiores dolore laudantium, voluptates omnis? Aliquam

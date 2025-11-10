@@ -10,7 +10,7 @@ import React, {
 } from "react";
 
 import { enums } from "@/utilities/enums";
-import { getAcknowledgementResponse } from "@/dtos/getAcknowledgementResponse";
+import { Acknowledgement } from "@/dtos/acknowledgement";
 import { format } from "date-fns";
 import { ChevronDown, ChevronUp, Dot, Plus } from "lucide-react";
 import { start } from "repl";
@@ -18,7 +18,7 @@ import { Button } from "./Button";
 
 interface AcknowledgementProps
   extends Omit<
-    getAcknowledgementResponse,
+    Acknowledgement,
     "StudentId" | "Student" | "Id" | "Description"
   > {
   children?: string | string[];
@@ -26,17 +26,14 @@ interface AcknowledgementProps
 
 interface StudentProfileCardProps
   extends Omit<ComponentProps<"div">, "className"> {
-  studentId?: string;
+  institutionalId?: string;
   fullName?: string;
   description?: string;
-  children: ReactElement<
-    AcknowledgementProps,
-    typeof AcknowledgementListItem
-  >[];
+  children: ReactNode;
 }
 
 export const StudentProfileCard: FC<StudentProfileCardProps> = ({
-  studentId,
+  institutionalId: studentId,
   fullName,
   description,
   children,
@@ -60,7 +57,7 @@ export const StudentProfileCard: FC<StudentProfileCardProps> = ({
   return (
     <div
       {...props}
-      className="px-10 py-7 bg-slate-50 flex gap-10 flex-col shadow-lg max-w-300 outline-accent hover:outline-2 group/studentcard transition-all transition-200"
+      className="px-10 w-[min(90vw,_1200px)] py-7 bg-slate-50 flex gap-10 flex-col shadow-lg max-w-300 outline-accent hover:outline-2 group/studentcard transition-all transition-200"
     >
       <div>
         <div className="py-2">
@@ -102,11 +99,11 @@ export const StudentProfileCard: FC<StudentProfileCardProps> = ({
 };
 
 export const AcknowledgementListItem: FC<AcknowledgementProps> = ({
-  StartDate,
-  EndDate,
-  Type,
-  Place,
-  OtherType,
+  startDate: StartDate,
+  endDate: EndDate,
+  type: Type,
+  place: Place,
+  otherType: OtherType,
   children,
   ...props
 }) => {
